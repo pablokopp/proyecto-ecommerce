@@ -9,7 +9,7 @@
   flex-grow: 1;
   text-align: left;
   padding-left: 5%;
-  border-right: #fff 3px dotted;
+  border-right: rgb(100, 58, 255) 3px dotted;
   user-select: none;
 }
 .menu__opcion {
