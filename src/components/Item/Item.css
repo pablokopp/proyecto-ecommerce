@@ -1,0 +1,31 @@
+.container__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 3px white solid;
+  background-color: #000;
+  margin: 1%;
+  padding: 1%;
+  width: 30%;
+  height: 500px;
+}
+
+.container__item .item__detail {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.container__item .item__title {
+  font-size: 1.2rem;
+}
+.container__item .item__price {
+  font-size: 1.4rem;
+}
+.item__img {
+  max-width: 100%;
+  max-height: 50%;
+  flex-grow: 1;
+}
+.item__count {
+  width: 50%;
+}

@@ -1,0 +1,27 @@
+.contador {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 80%;
+  background: rgba(255, 255, 255, 0.377);
+  border-radius: 10px;
+}
+.contador__item {
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  background: none;
+  margin: 2% 2%;
+  padding: 1% 5%;
+}
+.item__centro {
+  flex-grow: 1;
+}
+.contador button {
+  transition: all 0.2s ease-in-out;
+}
+.contador button:hover {
+  transform: scale(1.2);
+  color: rgb(148, 119, 253);
+}
