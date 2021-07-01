@@ -1,0 +1,32 @@
+.container__itemDetail {
+  display: flex;
+  flex-direction: row;
+  border-top: 1rem solid rgb(100, 58, 255);
+}
+.itemDetail__img {
+  flex-basis: 50%;
+}
+.itemDetail__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  flex-basis: 50%;
+  text-align: center;
+}
+.itemDetail__text h1 {
+  font-size: 3em;
+  transition: all 0.2s ease-in-out;
+}
+.itemDetail__text h1:hover {
+  color: rgb(100, 58, 255);
+}
+.itemDetail__text p {
+  font-size: 1.4em;
+  transition: all 0.3s ease-in-out;
+}
+.itemDetail__hover:hover {
+  color: rgb(100, 58, 255);
+  transform: scaleX(1.8) scaleY(1.4) scaleZ(2);
+}
