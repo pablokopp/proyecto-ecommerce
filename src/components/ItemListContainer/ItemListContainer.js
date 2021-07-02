@@ -7,10 +7,9 @@ import ItemList from '../ItemList/ItemList'
 
 function ItemListContainer(props) {
     const [productos, setProductos] = useState([])
-    
 
     useEffect(() => {
-        fetch("https://mocki.io/v1/c0599f39-0c6e-433d-9c6b-6ce9172ad37c").then((response)=>response.json()).then((respuestaProductos)=>{
+        fetch("https://mocki.io/v1/aca7b55c-8cce-483b-b203-ccbac46c9366").then((response)=>response.json()).then((respuestaProductos)=>{
             setProductos(respuestaProductos)
         })
     },[])
@@ -18,7 +17,7 @@ function ItemListContainer(props) {
 
     return (
         <div className='container__list'>
-            <h1>{props.greeting}</h1>
+            {props.greeting ? <h1>{props.greeting}</h1> : ''}
             <div className='list__items'>
             <ItemList productos={productos}/>
             </div>

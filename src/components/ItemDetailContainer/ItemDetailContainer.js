@@ -10,7 +10,7 @@ function ItemDetailContainer() {
 
     
     useEffect(() => {
-        fetch("https://mocki.io/v1/c0599f39-0c6e-433d-9c6b-6ce9172ad37c").then((response)=>response.json()).then((respuestaProductos)=>{
+        fetch("https://mocki.io/v1/aca7b55c-8cce-483b-b203-ccbac46c9366").then((response)=>response.json()).then((respuestaProductos)=>{
             setItem(respuestaProductos.find((item)=> item.id === id))
         })
     },[])
