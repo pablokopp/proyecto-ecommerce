@@ -1,6 +1,5 @@
 import React from 'react'
 import Item from '../Item/Item'
-import './ItemList.css'
 
 
 function ItemList(props) {
@@ -10,7 +9,7 @@ function ItemList(props) {
         <>
             {productos.map((producto)=>{
                 return (
-                <Item key={producto.id} producto={producto}/>
+                <Item key={producto.id} {...producto}/>
                 )
             })}
         </>

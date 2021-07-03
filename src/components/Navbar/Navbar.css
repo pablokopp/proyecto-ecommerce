@@ -14,6 +14,15 @@
   align-items: center;
   justify-content: flex-start;
 }
+.logo__content {
+  cursor: pointer;
+  transition: all 0.2s 0s ease-in-out;
+}
+.logo__content:hover {
+  color: rgb(100, 58, 255);
+  text-shadow: 0px 0px 2px rgb(148, 119, 253);
+  font-size: 3em;
+}
 .menu__opcion,
 .opcion__cart {
   flex-basis: 15%;
@@ -30,7 +39,20 @@
   transform: scale(1.2);
   color: rgb(148, 119, 253);
 }
-
+.menu__select {
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+}
+.menu__select:hover {
+  color: rgb(148, 119, 253);
+  text-shadow: 0px 0px 6px rgb(148, 119, 253);
+}
+option {
+  text-align: center;
+}
 .opcion__cart:hover {
   color: rgb(148, 119, 253);
   text-shadow: 0px 0px 6px rgb(148, 119, 253);
