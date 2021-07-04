@@ -45,6 +45,7 @@
   text-transform: uppercase;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .menu__select:hover {
   color: rgb(148, 119, 253);
