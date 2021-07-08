@@ -1,3 +1,10 @@
+.container__itemCount {
+  display: flex;
+  flex-direction: row;
+  min-width: 70%;
+  justify-content: space-between;
+}
+
 .contador {
   display: flex;
   flex-direction: row;
@@ -6,6 +13,7 @@
   min-width: 50%;
   background: rgba(255, 255, 255, 0.377);
   border-radius: 10px;
+  flex-grow: 1;
 }
 .contador__item {
   color: #fff;
@@ -24,4 +32,22 @@
 .contador button:hover {
   transform: scale(1.2);
   color: rgb(148, 119, 253);
+  cursor: pointer;
+}
+
+.botonAgregarCart {
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin: 2% 4%;
+  padding: 1%;
+  transition: all 0.1s ease-in-out;
+  border: none;
+  background-color: transparent;
+  min-width: 85px;
+}
+.botonAgregarCart:hover {
+  transform: scale(1.1);
+  color: rgb(148, 119, 253);
+  cursor: pointer;
 }

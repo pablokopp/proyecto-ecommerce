@@ -28,5 +28,20 @@
 }
 .itemDetail__hover:hover {
   color: rgb(100, 58, 255);
-  transform: scaleX(1.8) scaleY(1.4) scaleZ(2);
+  transform: scaleX(1.6) scaleY(1.4) scaleZ(2);
+}
+.itemDetail__toCart {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.377);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin: 4% 4%;
+  padding: 1%;
+  transition: all 0.1s ease-in-out;
+  border: none;
+}
+.itemDetail__toCart:hover {
+  transform: scale(1.2);
+  background-color: rgb(100, 58, 255);
+  cursor: pointer;
 }

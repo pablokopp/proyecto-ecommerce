@@ -18,7 +18,7 @@ function ItemDetailContainer() {
 
     if(loading) return <h1>Loading...</h1>
     return (
-        <ItemDetail {...item}/>
+        <ItemDetail item={item}/>
     )
 }
 
