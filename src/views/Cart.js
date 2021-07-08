@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext'
 
 
 export default function Cart() {
-    const {cart, removeItem, clearCart, setCart} = useContext(CartContext)
+    const {cart, clearCart} = useContext(CartContext)
     console.log(cart)
     return (
         <div>
@@ -11,11 +11,11 @@ export default function Cart() {
             {cart.map((producto)=>{
                 return (
                 <div key={producto.id}>
-                    <img width='100'height='100' src={producto.pictureUrl}></img>
+                    <img width='100'height='100' src={producto.pictureUrl}alt={`Esto muestra un@ ${producto.title}`}></img>
                     <span>{producto.title}</span>
                     <span>{producto.quantity}</span>
                     <span>Precio por unidad ${producto.price}</span>
-                    <span>Precio Total ${producto.price * producto.quantity}</span>
+                    <span className='cart__itemTotal'>Precio Total ${producto.price * producto.quantity}</span>
                 </div>
                 )
             })}
