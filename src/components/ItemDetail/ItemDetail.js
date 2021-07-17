@@ -7,10 +7,10 @@ import { useHistory } from 'react-router-dom'
 const ItemDetail = ({item})=> {
   const history = useHistory();
   const handleCart = ()=>history.push('/cart')
+  const {addToCart, realStock} = useContext(CartContext)
 
-
-  const {addToCart} = useContext(CartContext)
   const [cartFilled, isCartFilled] = useState(false)
+  const stock = realStock(item);
   const onAdd = qty => {
     addToCart(item, qty)
     isCartFilled(true)
@@ -22,7 +22,8 @@ const ItemDetail = ({item})=> {
         <h1>{item.title} - ${item.price}</h1>
         <p>{item.detail}</p>
         <p className='itemDetail__hover'>Hace tu pedido!</p>
-        <ItemCount stock={item.stock} onAdd={onAdd} />  
+        {stock > 0 ? <ItemCount stock={stock} onAdd={onAdd}/> :
+        <h1>Sin Stock</h1>}
         {!cartFilled ? '' :
         <button className='itemDetail__toCart' onClick={handleCart}>Finalizar Compra</button>} 
       </div>
