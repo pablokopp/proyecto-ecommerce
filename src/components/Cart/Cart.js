@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
-import { CartContext } from '../contexts/CartContext'
-
+import { CartContext } from '../../contexts/CartContext'
+import './Cart.css'
 
 export default function Cart() {
     const {cart, clearCart, removeItem, cartQuantity} = useContext(CartContext)
     const totalCart = cart.reduce(function(a,b){return a + (b.price * b.quantity)}, 0)
     console.log(cart)
     const history = useHistory();
-
+    const goToCheckout =()=> history.push('/checkout')
     if(cartQuantity !== 0 ){return (
         
         <div>
@@ -25,8 +25,12 @@ export default function Cart() {
                 )
             })}
             <div className='cartTotal'>
-            <h1>Total: ${totalCart}</h1>
-            <button onClick={clearCart}>Vaciar Carrito</button>
+                <h1>Total: ${totalCart}</h1>
+            
+            
+                <button onClick={clearCart}>Vaciar Carrito</button>
+                <button onClick={goToCheckout}>Realizar pedido!</button>
+            
             </div>
         </div>
     )

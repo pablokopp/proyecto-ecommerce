@@ -1,0 +1,79 @@
+.cartGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  background-color: black;
+  border-bottom: rgb(100, 58, 255) solid 10px;
+  border-radius: 20px;
+}
+.cartGrid > img {
+  height: 100px;
+  width: 100px;
+}
+.cartGrid > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  transition: all 0.2s 0s ease-in-out;
+}
+.cartGrid > span:hover {
+  color: rgb(100, 58, 255);
+}
+.cartGrid .removeItem {
+  font-size: 1.2em;
+  margin-right: 1%;
+  background-color: black;
+  transition: all 0.2s 0s ease-in-out;
+  user-select: none;
+}
+.cartGrid .removeItem:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 11px rgba(228, 224, 224, 0.527);
+}
+
+.cartTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.cartTotal h1 {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+.cartTotal > button {
+  margin-right: 1%;
+}
+.cartTotal > button,
+.cartEmpty h2 {
+  border: solid #fff 3px;
+  color: white;
+  font-size: 1.1em;
+  background-color: rgb(100, 58, 255);
+  padding: 10px;
+  transition: all 0.2s 0s ease-in-out;
+}
+.cartTotal > button:hover,
+.cartEmpty h2:hover {
+  background-color: #000;
+  color: rgb(100, 58, 255);
+  cursor: pointer;
+}
+
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+.cartEmpty h2:hover {
+  transform: scale(1.2);
+}

@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { pedidosCollection } from "../firebase";
 
 export const CartContext = createContext({});
  
@@ -32,8 +33,21 @@ export const CartProvider = ({children})=>{
         const foundProd = cart.find(prod => prod.id === product.id);
         return foundProd? product.stock - foundProd.quantity : product.stock
     }
-
-    return <CartContext.Provider value={{cart, setCart, clearCart,addToCart,removeItem, realStock, cartQuantity}}>
+    const getCheckoutId = ()=>{
+        const docs=[]
+        pedidosCollection.onSnapshot((querySnapshot)=>{
+            querySnapshot.forEach((doc)=>{
+                docs.push(doc.id)
+            })
+        })
+        console.log('CheckoutIDS', docs)
+        const idCheckout = docs.pop()
+        return idCheckout
+    }
+    const doCheckout = async (form) =>{
+        await pedidosCollection.doc().set(form)   
+    }
+    return <CartContext.Provider value={{cart, setCart, clearCart,addToCart,removeItem, realStock, cartQuantity, doCheckout, getCheckoutId}}>
         {children}
     </CartContext.Provider>
 }

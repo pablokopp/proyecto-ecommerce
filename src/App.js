@@ -10,7 +10,8 @@ import { Home } from './views/Home';
 import { QuienesSomos } from './views/QuienesSomos';
 import { Detail } from './views/Detail';
 import { Category } from './views/Category';
-import Cart from './views/Cart';
+import {CartView} from './views/CartView';
+import { CheckoutView } from './views/CheckoutView';
 
 function App() {
   return (
@@ -31,7 +32,10 @@ function App() {
             <QuienesSomos />
           </Route>
           <Route path="/cart">
-            <Cart />
+            <CartView />
+          </Route>
+          <Route path="/checkout">
+            <CheckoutView />
           </Route>
         </Switch>
       </BrowserRouter>
