@@ -33,16 +33,8 @@ export const CartProvider = ({children})=>{
         const foundProd = cart.find(prod => prod.id === product.id);
         return foundProd? product.stock - foundProd.quantity : product.stock
     }
-    const getCheckoutId = ()=>{
-        const docs=[]
-        pedidosCollection.onSnapshot((querySnapshot)=>{
-            querySnapshot.forEach((doc)=>{
-                docs.push(doc.id)
-            })
-        })
-        console.log('CheckoutIDS', docs)
-        const idCheckout = docs.pop()
-        return idCheckout
+    const getCheckoutId = async ()=>{
+        console.log(pedidosCollection.doc())
     }
     const doCheckout = async (form) =>{
         await pedidosCollection.doc().set(form)   
