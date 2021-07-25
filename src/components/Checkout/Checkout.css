@@ -1,6 +1,50 @@
 .checkoutForm {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+  width: 60%;
+  margin: 3vh auto;
+}
+.checkoutForm input,
+.checkoutForm button,
+.checkoutForm ul {
+  min-height: 5vh;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  border: #fff solid 3px;
+  transition: all 0.2s 0s ease-in-out;
+}
+.checkoutForm ul :last-child {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: rgb(100, 58, 255);
+}
+.checkoutForm li {
+  padding: 5px 0 5px 0;
+}
+.checkoutForm input:focus {
+  background-color: #fff;
+  color: rgb(100, 58, 255);
+  transform: scale(1.1);
+  border-radius: 100px;
+  outline: none;
+}
+#submitButton {
+  border: solid #fff 3px;
+  color: white;
+  font-size: 1.1em;
+  background-color: rgb(100, 58, 255);
+  padding: 10px;
+  transition: all 0.2s 0s ease-in-out;
+  margin: 2vh auto 0 auto;
+  width: 30%;
+}
+#submitButton:hover {
+  background-color: #000;
+  color: rgb(100, 58, 255);
+  cursor: pointer;
+  transform: scale(1.2);
 }

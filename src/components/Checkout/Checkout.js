@@ -5,7 +5,7 @@ import './Checkout.css'
 import firebase from 'firebase'
 
 const Checkout = () => {
-    const {cart, doCheckout, getCheckoutId} = useContext(CartContext)
+    const {cart, doCheckout, getCheckoutId, clearCart} = useContext(CartContext)
     const history = useHistory();
 
     const initialState= {
@@ -36,18 +36,20 @@ const Checkout = () => {
         doCheckout(values)
         setValues({...initialState})
         isFinCheckout(true)
-
+        clearCart()
     };
 
 
     if(!finCheckout){
     return (
-    <div>
-        <form className='checkoutForm' onSubmit={handleSubmit}>
+    <div>   
+        <h1>Orden de compra</h1>
+
+        <form className='checkoutForm' onSubmit={handleSubmit} >
             <input name='nombre' placeholder='Nombre' required onChange={handleOnChange} value={values.nombre}></input>
             <input name='apellido' placeholder='Apellido' required onChange={handleOnChange} value={values.apellido}></input>
             <input name='correo' placeholder='Correo' required onChange={handleOnChange} value={values.correo}></input>
-            <input name='telefono' placeholder='Telefono' required onChange={handleOnChange} value={values.telefono}></input>
+            <input name='telefono' placeholder='Teléfono' required onChange={handleOnChange} value={values.telefono}></input>
 
             <div>
                 <ul>
@@ -56,9 +58,10 @@ const Checkout = () => {
                         <li key={producto.id}>{producto.title} x {producto.quantity}</li>
                     )
                 })}
+                <li>Total: ${values.total}</li>
                 </ul>
             </div>
-            <button type='submit'>Hacer pedido!</button>
+            <button type='submit' id='submitButton'>Hacer pedido!</button>
             
         </form>        
 

@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { pedidosCollection } from "../firebase";
+import { pedidosCollection, productosCollection } from "../firebase";
 
 export const CartContext = createContext({});
  
@@ -33,6 +33,7 @@ export const CartProvider = ({children})=>{
         const foundProd = cart.find(prod => prod.id === product.id);
         return foundProd? product.stock - foundProd.quantity : product.stock
     }
+
     const getCheckoutId = async ()=>{
         console.log(pedidosCollection.doc())
     }
