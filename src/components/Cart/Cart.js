@@ -6,11 +6,9 @@ import './Cart.css'
 export default function Cart() {
     const {cart, clearCart, removeItem, cartQuantity} = useContext(CartContext)
     const totalCart = cart.reduce(function(a,b){return a + (b.price * b.quantity)}, 0)
-    console.log(cart)
     const history = useHistory();
     const goToCheckout =()=> history.push('/checkout')
     if(cartQuantity !== 0 ){return (
-        
         <div>
             <h1>Tu Carrito</h1>
             {cart.map((producto)=>{
@@ -26,11 +24,8 @@ export default function Cart() {
             })}
             <div className='cartTotal'>
                 <h1>Total: ${totalCart}</h1>
-            
-            
                 <button onClick={clearCart}>Vaciar Carrito</button>
                 <button onClick={goToCheckout}>Realizar pedido!</button>
-            
             </div>
         </div>
     )
@@ -40,11 +35,5 @@ export default function Cart() {
         <h1>Tu carrito está vacío 😔</h1>
         <h2 onClick={()=>history.push('/')}>Busca algo en miPlacard 🤩</h2>
         </div>
-    
     )
-
 }
-
-var arr = [{x:1}, {x:2}, {x:4}];
-arr.reduce(function (acc, obj) { return acc + obj.x; }, 0); // 7
-console.log(arr);

@@ -48,3 +48,43 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+.checkoutMensaje {
+  background-color: #000;
+  margin: 1% auto;
+  padding: 1%;
+  width: 50%;
+  border-radius: 50px;
+}
+.checkoutMensaje span {
+  color: rgb(100, 58, 255);
+}
+.checkoutMensaje button {
+  border: solid #fff 3px;
+  color: white;
+  font-size: 1.1em;
+  background-color: transparent;
+  padding: 10px;
+  transition: all 0.2s 0s ease-in-out;
+  margin: 2vh auto 0 auto;
+  width: 30%;
+}
+.checkoutMensaje button:hover {
+  background-color: #fff;
+  color: rgb(100, 58, 255);
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#checkoutId {
+  font-size: 2em;
+  transition: all 0.2s 0s ease-in-out;
+  border: solid #fff 3px;
+  margin: 1% auto;
+  padding: 1%;
+  width: fit-content;
+}
+#checkoutId:hover {
+  border-color: rgb(100, 58, 255);
+  color: rgb(100, 58, 255);
+}

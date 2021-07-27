@@ -1,13 +1,13 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
 import { CartContext } from '../../contexts/CartContext'
 import './Checkout.css'
 import firebase from 'firebase'
+import {pedidosCollection} from '../../firebase'
 
 const Checkout = () => {
-    const {cart, doCheckout, getCheckoutId, clearCart} = useContext(CartContext)
+    const {cart, clearCart} = useContext(CartContext)
     const history = useHistory();
-
     const initialState= {
         nombre:"",
         apellido:"",
@@ -25,14 +25,37 @@ const Checkout = () => {
 
     }
     const [values, setValues] = useState(initialState)
+    const [userName, setUserName] = useState('')
+    const [checkoutID, setCheckoutID]= useState([]);
     const [finCheckout, isFinCheckout] = useState(false)
-    
+   
+    const doCheckout = async (form) =>{
+        await pedidosCollection.doc().set(form)   
+    }
+    // const getCheckoutID = () => {
+    //     pedidosCollection.onSnapshot((querySnapshot)=>{
+    //         querySnapshot.forEach((order)=>{
+    //             checkoutID.push({id:order.id, ...order.data()})
+    //         })
+    //     })
+        
+    // }
+    const getCheckoutID = async()=>{
+       const response = await pedidosCollection.get()
+       setCheckoutID(response.docs.map(pedido => pedido.id))
+    }
+    useEffect(()=>{
+        getCheckoutID()
+    },[finCheckout])
+
     const handleOnChange = (e) =>{
         const {name, value} = e.target
         setValues({...values, [name]: value})
+    
     };
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setUserName(values.nombre)
         doCheckout(values)
         setValues({...initialState})
         isFinCheckout(true)
@@ -68,9 +91,12 @@ const Checkout = () => {
     </div>
     )}
     return(
-        <div>
-            <h1>Gracias por tu pedido!</h1>
-            <button onClick={()=>{isFinCheckout(false); history.push('/')}}>Seguir Comprando</button>
+        <div className="checkoutMensaje">
+            <h1>Gracias <span>{userName}</span> por tu pedido!</h1>
+            <h2>Tu código de orden es: </h2>
+            <h2 id='checkoutId'>{checkoutID[checkoutID.length-1]}</h2>
+            
+            <button onClick={()=>{isFinCheckout(false); history.push('/')}}>🎉 Seguir Comprando 🎉</button>
         </div>
     )
 }

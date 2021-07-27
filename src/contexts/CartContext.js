@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { pedidosCollection, productosCollection } from "../firebase";
+import { pedidosCollection } from "../firebase";
 
 export const CartContext = createContext({});
  
@@ -37,10 +37,8 @@ export const CartProvider = ({children})=>{
     const getCheckoutId = async ()=>{
         console.log(pedidosCollection.doc())
     }
-    const doCheckout = async (form) =>{
-        await pedidosCollection.doc().set(form)   
-    }
-    return <CartContext.Provider value={{cart, setCart, clearCart,addToCart,removeItem, realStock, cartQuantity, doCheckout, getCheckoutId}}>
+
+    return <CartContext.Provider value={{cart, setCart, clearCart,addToCart,removeItem, realStock, cartQuantity, getCheckoutId}}>
         {children}
     </CartContext.Provider>
 }
