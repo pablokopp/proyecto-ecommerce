@@ -14,7 +14,7 @@ export const QuienesSomos = () => {
         <p>
         Lorem et interdum ac pellentesque consectetur etiam parturient nostra. Lacus orci elit est habitasse cubilia porta. Venenatis penatibus velit fringilla nisi, habitasse adipiscing risus penatibus praesent? Elit ante leo tempor erat purus porttitor risus. Metus tempus fringilla ornare magnis nibh massa massa facilisis ultricies conubia. Quis proin egestas viverra scelerisque porta fringilla. Donec arcu blandit libero etiam dolor himenaeos dapibus amet habitant fringilla purus. Iaculis magna ultrices elit ornare donec placerat inceptos tempor mattis dui. Donec id suspendisse aptent quis mollis hac.
         </p>
-        <img src={logoImg}></img>
+        <img src={logoImg} alt='Logo miPlacard'></img>
     </div>
     )
 }

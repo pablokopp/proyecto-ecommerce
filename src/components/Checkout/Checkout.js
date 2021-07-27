@@ -32,14 +32,7 @@ const Checkout = () => {
     const doCheckout = async (form) =>{
         await pedidosCollection.doc().set(form)   
     }
-    // const getCheckoutID = () => {
-    //     pedidosCollection.onSnapshot((querySnapshot)=>{
-    //         querySnapshot.forEach((order)=>{
-    //             checkoutID.push({id:order.id, ...order.data()})
-    //         })
-    //     })
-        
-    // }
+
     const getCheckoutID = async()=>{
        const response = await pedidosCollection.get()
        setCheckoutID(response.docs.map(pedido => pedido.id))
