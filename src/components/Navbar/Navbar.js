@@ -1,12 +1,12 @@
 import React from 'react'
-import './Navbar.css'
 import { useHistory } from 'react-router-dom'
+import './Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
-
 import logoImg from './logo.png'
 
 function Navbar() {
-    const history = useHistory();
+    const history = useHistory()
+
     const handleHome = ()=>{
         history.push('/')
     }
@@ -18,6 +18,7 @@ function Navbar() {
         }
     }
     const handleQuienes = ()=> history.push('/quienesSomos')
+
     return (
         <div className='menu'>
             <div id='logo' onClick={handleHome}>

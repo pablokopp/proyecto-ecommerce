@@ -9,7 +9,6 @@ function CartWidget() {
 
     if(cartQuantity>0){
         return (
-
             <button className="opcion__cart" onClick={handleCart}>
                 <span className='material-icons'>
                 shopping_cart
@@ -18,11 +17,7 @@ function CartWidget() {
             </button>
         )
     }
-    return(
-        <></>
-    )
-
-
+    return(<></>)
 }
 
 export default CartWidget

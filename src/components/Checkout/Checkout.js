@@ -29,69 +29,68 @@ const Checkout = () => {
     const [checkoutID, setCheckoutID]= useState([]);
     const [finCheckout, isFinCheckout] = useState(false)
    
-    const doCheckout = async (form) =>{
+    const doCheckout = async(form) =>{
         await pedidosCollection.doc().set(form)   
     }
 
-    const getCheckoutID = async()=>{
+    const getCheckoutID = async() =>{
        const response = await pedidosCollection.get()
        setCheckoutID(response.docs.map(pedido => pedido.id))
     }
-    useEffect(()=>{
-        getCheckoutID()
-    },[finCheckout])
 
     const handleOnChange = (e) =>{
         const {name, value} = e.target
         setValues({...values, [name]: value})
     
-    };
+    }
+
     const handleSubmit = (e) =>{
-        e.preventDefault();
+        e.preventDefault()
         setUserName(values.nombre)
         doCheckout(values)
         setValues({...initialState})
         isFinCheckout(true)
         clearCart()
-    };
+    }
 
+    useEffect(()=>{
+        getCheckoutID()
+    },[finCheckout])
 
     if(!finCheckout){
-    return (
-    <div>   
-        <h1>Orden de compra</h1>
+        return (
+            <div>   
+                <h1>Orden de compra</h1>
 
-        <form className='checkoutForm' onSubmit={handleSubmit} >
-            <input name='nombre' placeholder='Nombre' required onChange={handleOnChange} value={values.nombre}></input>
-            <input name='apellido' placeholder='Apellido' required onChange={handleOnChange} value={values.apellido}></input>
-            <input name='correo' placeholder='Correo' required onChange={handleOnChange} value={values.correo}></input>
-            <input name='telefono' placeholder='Teléfono' required onChange={handleOnChange} value={values.telefono}></input>
+                <form className='checkoutForm' onSubmit={handleSubmit}>
+                    <input name='nombre' placeholder='Nombre' required onChange={handleOnChange} value={values.nombre}></input>
+                    <input name='apellido' placeholder='Apellido' required onChange={handleOnChange} value={values.apellido}></input>
+                    <input name='correo' placeholder='Correo' required onChange={handleOnChange} value={values.correo}></input>
+                    <input name='telefono' placeholder='Teléfono' required onChange={handleOnChange} value={values.telefono}></input>
 
-            <div>
-                <ul>
-                {cart.map((producto)=>{
-                    return(
-                        <li key={producto.id}>{producto.title} x {producto.quantity}</li>
-                    )
-                })}
-                <li>Total: ${values.total}</li>
-                </ul>
+                    <div>
+                        <ul>
+                        {cart.map((producto)=>{
+                            return(
+                                <li key={producto.id}>{producto.title} x {producto.quantity}</li>
+                            )
+                        })}
+                            <li>Total: ${values.total}</li>
+                        </ul>
+                    </div>
+                    <button type='submit' id='submitButton'>Hacer pedido!</button>
+                </form>        
             </div>
-            <button type='submit' id='submitButton'>Hacer pedido!</button>
-            
-        </form>        
-
-    </div>
-    )}
-    return(
-        <div className="checkoutMensaje">
-            <h1>Gracias <span>{userName}</span> por tu pedido!</h1>
-            <h2>Tu código de orden es: </h2>
-            <h2 id='checkoutId'>{checkoutID[checkoutID.length-1]}</h2>
-            
-            <button onClick={()=>{isFinCheckout(false); history.push('/')}}>🎉 Seguir Comprando 🎉</button>
-        </div>
-    )
+        )}
+        return(
+            <div className="checkoutMensaje">
+                <h1>Gracias <span>{userName}</span> por tu pedido!</h1>
+                <h2>Tu código de orden es: </h2>
+                <h2 id='checkoutId'>{checkoutID[checkoutID.length-1]}</h2>
+                
+                <button onClick={()=>{isFinCheckout(false); history.push('/')}}>🎉 Seguir Comprando 🎉</button>
+            </div>
+        )
 }
 
 export default Checkout

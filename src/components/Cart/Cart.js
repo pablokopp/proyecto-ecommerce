@@ -8,28 +8,31 @@ export default function Cart() {
     const totalCart = cart.reduce(function(a,b){return a + (b.price * b.quantity)}, 0)
     const history = useHistory();
     const goToCheckout =()=> history.push('/checkout')
-    if(cartQuantity !== 0 ){return (
-        <div>
-            <h1>Tu Carrito</h1>
-            {cart.map((producto)=>{
-                return (
-                <div key={producto.id} className='cartGrid'>
-                    <img className='cartImg' src={producto.pictureUrl}alt={`Esto muestra un@ ${producto.title}`}></img>
-                    <span>{producto.title}</span>
-                    <span>{producto.quantity}</span>
-                    <span>Precio por unidad ${producto.price}</span>
-                    <span className='removeItem' onClick={()=>removeItem(producto.id)}>🗑️</span>
+
+    if(cartQuantity !== 0 ){
+        return(
+            <div>
+                <h1>Tu Carrito</h1>
+
+                {cart.map((producto)=>{
+                    return (
+                    <div key={producto.id} className='cartGrid'>
+                        <img className='cartImg' src={producto.pictureUrl}alt={`Esto muestra un@ ${producto.title}`}></img>
+                        <span>{producto.title}</span>
+                        <span>{producto.quantity}</span>
+                        <span>Precio por unidad ${producto.price}</span>
+                        <span className='removeItem' onClick={()=>removeItem(producto.id)}>🗑️</span>
+                    </div>
+                    )
+                })}
+                
+                <div className='cartTotal'>
+                    <h1>Total: ${totalCart}</h1>
+                    <button onClick={clearCart}>Vaciar Carrito</button>
+                    <button onClick={goToCheckout}>Realizar pedido!</button>
                 </div>
-                )
-            })}
-            <div className='cartTotal'>
-                <h1>Total: ${totalCart}</h1>
-                <button onClick={clearCart}>Vaciar Carrito</button>
-                <button onClick={goToCheckout}>Realizar pedido!</button>
             </div>
-        </div>
-    )
-}
+    )}
     return(
        <div className='cartEmpty'>             
         <h1>Tu carrito está vacío 😔</h1>
