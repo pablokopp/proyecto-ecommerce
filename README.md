@@ -1,9 +1,36 @@
-### Mi proyecto va a ser miPlacard: un ecommerce destinado a poder sacarle réditos a ese "lo usé una sola vez", o a ese "no se cómo me gustó"; es decir, una página para vender ese excedente de placard que no quiero regalar.
+![miplacardtitulo](https://user-images.githubusercontent.com/84154261/127269013-a592507c-4202-4257-8487-10abd0b6ab6d.png)
 
-- En un futuro mi idea es dar más información sobre el estado del producto a vender en cuestión, dandole categorias con nombres originales como "usado una vez" o "con mucha calle" o las que se me ocurran que busquen ese momento de risa e identificacion con el usuario.
 
-- Más adelante en el proyecto veré de agregar Fonts distintas para las secciones, y enfocarme un poco más en que paleta de colores usaré.
+## Presentación
 
-- Al momento mi idea es no usar librerias externas de CSS, y tratar de codear todo por mi cuenta en lo que es el aspecto visual, ya que me siento más cómodo al momento de manejar los estilos, y me interesa ver de que soy capaz de crear sin un "molde".
+Como proyecto final del **Curso de React Js** decidí crear **miPlacard**, una App dedicada a vender las cosas que tenemos en exceso dentro del armario.
 
-\*\* LINK para ver la funcionalidad: https://www.loom.com/share/0e60afd77c414f54acddf092bd9f2b72
+La idea fue generar una **interfaz simple y atractiva**, con  **animaciones simpáticas** y que se genere una **fluidez** entre las distintas secciones de la App.
+  
+## Estilos
+Para mi proyecto **decidí no usar Librerías** que me ayuden a hacer el estilo de la App. La intención detrás de esta decisión era no tener algo que condicione mi imaginación al momento de crear la interfaz.
+### Colores Usados
+![paleta](https://user-images.githubusercontent.com/84154261/127270035-ae0f2f4a-822e-46d4-bc47-d0c364fc9b1b.png)
+
+## Vista General
+![navegacion](https://user-images.githubusercontent.com/84154261/127273070-d314312e-33b8-4459-9186-c31ea2b9d769.gif)
+
+## Navbar
+![navbar](https://user-images.githubusercontent.com/84154261/127273585-506ab73f-19d7-4254-b033-193beed25ca9.gif)
+
+## Detail
+![detail](https://user-images.githubusercontent.com/84154261/127273897-976b7a71-ea5d-4c75-b745-ef239c9601b4.gif)
+
+## Cart
+![cart](https://user-images.githubusercontent.com/84154261/127274467-1d8a9d1d-80c3-4ba6-9b8f-d6ee7808d27f.gif)
+
+## Checkout
+![checkout](https://user-images.githubusercontent.com/84154261/127274830-8f0cd01d-7d02-4a87-87a6-15240269c985.gif)
+
+#### Pequeña muestra de como se ven las ordenes generadas en Firebase
+![firebase](https://user-images.githubusercontent.com/84154261/127276104-fd6701cf-ca50-474c-8a5d-300d68ed97b1.gif)
+
+
+
+
+
