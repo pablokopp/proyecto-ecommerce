@@ -6,6 +6,8 @@
 Como proyecto final del **Curso de React Js** decidí crear **miPlacard**, una App dedicada a vender las cosas que tenemos en exceso dentro del armario.
 
 La idea fue generar una **interfaz simple y atractiva**, con  **animaciones simpáticas** y que se genere una **fluidez** entre las distintas secciones de la App.
+
+La única librería utilizada fue React Router DOM, para realizar el routing de mi App.
   
 ## Estilos
 Para mi proyecto **decidí no usar Librerías** que me ayuden a hacer el estilo de la App. La intención detrás de esta decisión era no tener algo que condicione mi imaginación al momento de crear la interfaz.
